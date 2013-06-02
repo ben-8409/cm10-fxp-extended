@@ -324,7 +324,7 @@ else
 fi
 
 #CMUpdater
-if [ "${updates}" = "Y" || "${cmupdater}" = "N" ]; then
+if [ "${updates}" = "Y" ] || [ "${cmupdater}" = "N" ]; then
 	echo "--- updates"
 	sed -i "/CMUpdater/d" ${android}/vendor/cm/config/common.mk
 fi
