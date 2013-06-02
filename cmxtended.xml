@@ -49,6 +49,11 @@
 	<remove-project name="CyanogenMod/android_bootable_recovery" />
 	<project name="CyanogenMod/android_bootable_recovery" path="bootable/recovery" remote="github" revision="cm-10.1" />
 
+	<!-- AOSP Email, fork ben-8409 -->
+	<remove-project name="CyanogenMod/android_packages_apps_Email" />
+	<project name="ben-8409/android_platform_packages_apps_Email" path="pacakges/apps/Email" remote="github" revision="master" />
+	
+	
 	<!-- Build iw from source -->
 	<project name="dickychiang/iw" path="external/iw" remote="github" revision="android" />
 </manifest>
