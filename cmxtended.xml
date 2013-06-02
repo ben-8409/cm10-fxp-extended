@@ -47,7 +47,7 @@
 
 	<!-- AOSP Email -->
 	<remove-project name="CyanogenMod/android_packages_apps_Email" />
-	<project name="android/platform/packages/apps/Email" path="pacakges/apps/Email" remote="aosp" revision="android-4.2.2_r1.2" />
+	<project name="platform/packages/apps/Email" path="pacakges/apps/Email" remote="aosp" revision="master" />
 	
 	<!-- CM10.1 Calendar -->
 <!--	<remove-project name="CyanogenMod/android_packages_providers_CalendarProvider" />
