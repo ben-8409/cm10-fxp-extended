@@ -141,11 +141,9 @@ do_patch() {
 		patch -p1 --forward -r- --no-backup-if-mismatch <${patches}/$1
 		if [ $? -ne 0 ]; then
 			echo "!!! Error applying patch $1"
-			exit
 		fi
 	else
 		echo "!!! Patch $1 not found"
-		exit
 	fi
 }
 
@@ -154,11 +152,9 @@ do_patch_reverse() {
 		patch -p1 --reverse -r- --no-backup-if-mismatch <${patches}/$1
 		if [ $? -ne 0 ]; then
 			echo "!!! Error applying reverse patch $1"
-			exit
 		fi
 	else
 		echo "!!! Patch $1 not found"
-		exit
 	fi
 }
 
