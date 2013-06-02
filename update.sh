@@ -91,7 +91,7 @@ cmfilemanager_cm10_1=Y
 apollo_cm10_1=Y
 cwm_cm10_1=Y
 calendar_cm10_1=Y
-email_aosp=Y
+email_cm10_1=Y
 cmupdater=N
 
 #Local configuration
@@ -776,11 +776,11 @@ if [ "${calendar_cm10_1}" = "Y" ]; then
 fi
 
 #Email AOSP
-#if [ "${email_aosp}" = "Y" ]; then
-#	echo "*** Calendar CM10.1 ***"
-#	cd ${android}/packages/apps/Email
-#	do_patch email_backport_remove_widget_category.patch
-#fi
+if [ "${email_cm10_1}" = "Y" ]; then
+	echo "*** Email CM10.1 ***"
+	cd ${android}/packages/apps/Email
+	do_patch email_backport_remove_widget_category.patch
+fi
 
 #Custom patches
 if [ -f ~/.cm10xtended.sh ]; then
