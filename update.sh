@@ -87,12 +87,12 @@ trebuchet_cm10_1=N
 deskclock_cm10_1=Y
 superuser_koush=Y
 superuser_embed=Y
-busybox_cm10_1=Y
 cmfilemanager_cm10_1=Y
 apollo_cm10_1=Y
 cwm_cm10_1=Y
 calendar_cm10_1=Y
 email_aosp=Y
+cmupdater=N
 
 #Local configuration
 if [ -f ~/.cm10xtended ]; then
@@ -238,8 +238,9 @@ if [ "${init}" = "Y" ]; then
 	do_deldir ${android}/packages/apps/CMUpdater
 	do_deldir ${android}/packages/apps/CMFileManager
 	do_deldir ${android}/packages/apps/Apollo
+	do_deldir ${android}/packages/apps/Calendar
+	do_deldir ${android}/packages/apps/Email
 	do_deldir ${android}/bootable/recovery
-	do_deldir ${android}/external/busybox
 	do_deldir ${android}/kernel/semc/msm7x30
 
 	do_deldir ${android}/.repo/projects/system/su.git
@@ -249,8 +250,9 @@ if [ "${init}" = "Y" ]; then
 	do_deldir ${android}/.repo/projects/packages/apps/CMUpdater.git
 	do_deldir ${android}/.repo/projects/packages/apps/CMFileManager.git
 	do_deldir ${android}/.repo/projects/packages/apps/Apollo.git
+	do_deldir ${android}/.repo/projects/packages/apps/Calendar.git
+	do_deldir ${android}/.repo/projects/packages/apps/Email.git
 	do_deldir ${android}/.repo/projects/bootable/recovery.git
-	do_deldir ${android}/.repo/projects/external/busybox.git
 	do_deldir ${android}/.repo/projects/kernel/semc/msm7x30.git
 fi
 
@@ -294,13 +296,6 @@ else
 	sed -i "/android_packages_apps_DeskClock/d" ${android}/.repo/local_manifests/cmxtended.xml
 fi
 
-#busybox CM10.1
-if [ "${busybox_cm10_1}" = "Y" ]; then
-	echo "--- busybox CM10.1"
-else
-	sed -i "/android_external_busybox/d" ${android}/.repo/local_manifests/cmxtended.xml
-fi
-
 #CMFileManager CM10.1
 if [ "${cmfilemanager_cm10_1}" = "Y" ]; then
 	echo "--- CMFileManager CM10.1"
@@ -329,7 +324,7 @@ else
 fi
 
 #CMUpdater
-if [ "${updates}" = "Y" ]; then
+if [ "${updates}" = "Y" || "${cmupdater}" = "N" ]; then
 	echo "--- updates"
 	sed -i "/CMUpdater/d" ${android}/vendor/cm/config/common.mk
 fi
