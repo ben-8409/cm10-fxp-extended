@@ -49,9 +49,9 @@
 	<remove-project name="CyanogenMod/android_bootable_recovery" />
 	<project name="CyanogenMod/android_bootable_recovery" path="bootable/recovery" remote="github" revision="cm-10.1" />
 
-	<!-- AOSP Email, fork ben-8409 -->
+	<!-- AOSP Email -->
 	<remove-project name="CyanogenMod/android_packages_apps_Email" />
-	<project name="ben-8409/android_platform_packages_apps_Email" path="pacakges/apps/Email" remote="github" revision="master" />
+	<project name="android/platform/packages/apps/Email" path="pacakges/apps/Email" remote="aosp" revision="master" />
 	
 	<!-- CM10.1 Calendar -->
 	<remove-project name="CyanogenMod/android_packages_providers_CalendarProvider" />

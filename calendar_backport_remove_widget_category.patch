@@ -1,0 +1,22 @@
+From a61326633ff6c92a664836a8748e7e0fa3e78eed Mon Sep 17 00:00:00 2001
+From: Benjamin Geese <code@benjamingeese.de>
+Date: Sun, 2 Jun 2013 16:04:35 +0200
+Subject: [PATCH] remove widget category to backport for jellybean 4.1.2
+
+---
+ res/xml/widget_info.xml |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/res/xml/widget_info.xml b/res/xml/widget_info.xml
+index b8bd4dc..59837f4 100644
+--- a/res/xml/widget_info.xml
++++ b/res/xml/widget_info.xml
+@@ -22,4 +22,4 @@
+     android:initialLayout="@layout/widget"
+     android:resizeMode="horizontal|vertical"
+     android:configure="com.android.email.widget.WidgetConfiguration"
+-    android:widgetCategory="home_screen|keyguard" />
++     />
+-- 
+1.7.9.5
+

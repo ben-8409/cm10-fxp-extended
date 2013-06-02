@@ -58,24 +58,24 @@ kernel_wifi_range=Y
 kernel_displaylink=Y
 kernel_volumes=Y
 
-bootlogo=Y
+bootlogo=N
 bootlogoh=logo_H_extended.png
 bootlogom=logo_M_extended.png
 
-pin=Y
+pin=N
 
 #ROM
 
 cellbroadcast=Y
 openpdroid=N
-nano=Y
-terminfo=Y
+nano=N
+terminfo=N
 emptydrawer=Y
-massstorage=Y
+massstorage=N
 xsettings=Y
 wifiautoconnect=Y
 eba=Y
-ssh=Y
+ssh=N
 layout=Y
 mvolume=Y
 qcomdispl=Y
@@ -83,7 +83,7 @@ boost_pulse=Y
 iw=Y
 mms_fix=Y
 apn_cm10_1=Y
-trebuchet_cm10_1=Y
+trebuchet_cm10_1=N
 deskclock_cm10_1=Y
 superuser_koush=Y
 superuser_embed=Y
@@ -91,6 +91,8 @@ busybox_cm10_1=Y
 cmfilemanager_cm10_1=Y
 apollo_cm10_1=Y
 cwm_cm10_1=Y
+calendar_cm10_1=Y
+email_aosp=Y
 
 #Local configuration
 if [ -f ~/.cm10xtended ]; then
@@ -774,6 +776,20 @@ if [ "${cwm_cm10_1}" = "Y" ]; then
 	cd ${android}/system/core
 	do_patch system_core_libsparse.patch
 fi
+
+#Calendar CM10.1
+if [ "${calendar_cm10_1}" = "Y" ]; then
+	echo "*** Calendar CM10.1 ***"
+	cd ${android}/packages/apps/Calendar
+	do_patch calendar_backport_remove_widget_category.patch
+fi
+
+#Email AOSP
+#if [ "${email_aosp}" = "Y" ]; then
+#	echo "*** Calendar CM10.1 ***"
+#	cd ${android}/packages/apps/Email
+#	do_patch email_backport_remove_widget_category.patch
+#fi
 
 #Custom patches
 if [ -f ~/.cm10xtended.sh ]; then
