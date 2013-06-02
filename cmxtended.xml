@@ -53,7 +53,13 @@
 	<remove-project name="CyanogenMod/android_packages_apps_Email" />
 	<project name="ben-8409/android_platform_packages_apps_Email" path="pacakges/apps/Email" remote="github" revision="master" />
 	
-	
+	<!-- CM10.1 Calendar -->
+	<remove-project name="CyanogenMod/android_packages_providers_CalendarProvider" />
+	<project name="CyanogenMod/android_packages_providers_CalendarProvider" path="packages/providers/CalendarProvider"  remote="github" revision="cm-10.1" />
+	<remove-project name="CyanogenMod/android_packages_apps_Calendar" />
+	<project name="CyanogenMod/android_packages_apps_Calendar" path="packages/apps/Calendar" remote="github" revision="cm-10.1" />
+
+
 	<!-- Build iw from source -->
 	<project name="dickychiang/iw" path="external/iw" remote="github" revision="android" />
 </manifest>
